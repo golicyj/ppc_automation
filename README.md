@@ -1,5 +1,5 @@
 # PPC_Automation (v. 1.2)
-Simple but very useful script to automate multiple advertising campaigns based on JSON parameters (eCPM, Country) from af. network.
+Simple but very useful script to automate multiple advertising campaigns based on JSON parameters (eCPM, Country). You will receive notifications about the status of advertising campaigns to Telegram, along with important values from the affiliate network.
 
 # How to use?
 Just setup your API keys and networks url. Then set up your cron on Ubuntu Server:
