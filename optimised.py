@@ -7,6 +7,7 @@ import requests
 aff_key = ''
 ad_key = ''
 tg_key = ''
+chat_id = ''
 
 # set campaign id
 cuba = 3193880
@@ -43,7 +44,7 @@ def camp_start(camp, status): # 'status' = play/stop
 
 
 def telegram_alert(message):
-    url = 'https://api.telegram.org/'+tg_key+'/sendMessage?chat_id=334283004&text='+ message +''
+    url = 'https://api.telegram.org/'+tg_key+'/sendMessage?chat_id='+ chat_id +'&text='+ message +''
     x = requests.post(url)
 
 
