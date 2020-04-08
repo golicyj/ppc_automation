@@ -50,18 +50,22 @@ def telegram_alert(message):
 
 def find_best_veticals(geo_name):
 
-    for i in data:
-        if i['ecpm_24h'] > ecpm_max and i['country_name'] == geo_name:
-            camp_start(geo_name, 'play')
-            a = '' +geo_name + ' is START now. ECPM:' + str(i['ecpm_24h']) + ' USD'
-            telegram_alert(a)
-            break
+    try:
+        for i in data:
+            if i['ecpm_24h'] > ecpm_max and i['country_name'] == geo_name:
+                camp_start(geo_name, 'play')
+                a = '' +geo_name + ' is START now. ECPM:' + str(i['ecpm_24h']) + ' USD'
+                telegram_alert(a)
+                break
 
-        if i['ecpm_24h'] < ecpm_min and i['country_name'] == geo_name:
-            camp_start(geo_name, 'stop')
-            a = '' +geo_name + ' is STOP now. ECPM:' + str(round(i['ecpm_24h'],1)) + ' USD'
-            telegram_alert(a)
-            break
+            if i['ecpm_24h'] < ecpm_min and i['country_name'] == geo_name:
+                camp_start(geo_name, 'stop')
+                a = '' +geo_name + ' is STOP now. ECPM:' + str(round(i['ecpm_24h'],1)) + ' USD'
+                telegram_alert(a)
+                break
+    except:
+        print('No profitable country found')
+
 
 for x in list:
     find_best_veticals(x)
